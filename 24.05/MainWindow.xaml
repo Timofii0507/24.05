@@ -1,0 +1,47 @@
+﻿<Window x:Class="_24._05.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_24._05"
+        mc:Ignorable="d"
+       Title="Mailing List App" Height="450" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Top Panel -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="16">
+            <Button Content="Connect" Click="ConnectButton_Click" Margin="0 0 16 0"
+                    Style="{StaticResource MaterialDesignFlatButton}"/>
+
+            <TextBox x:Name="CityTextBox" Width="200" Margin="0 0 16 0"/>
+
+            <Button Content="Filter by City" Click="CityButton_Click"
+                    Style="{StaticResource MaterialDesignFlatButton}"/>
+
+            <TextBox x:Name="CountryTextBox" Width="200" Margin="16 0 16 0"/>
+
+            <Button Content="Filter by Country" Click="CountryButton_Click"
+                    Style="{StaticResource MaterialDesignFlatButton}"/>
+        </StackPanel>
+
+        <!-- Main Content -->
+        <ScrollViewer Grid.Row="1" Margin="16">
+            <StackPanel>
+                <TextBox x:Name="OutputTextBox" IsReadOnly="True" MinHeight="300" Margin="0 0 0 16"/>
+
+                <Button Content="Load All" Click="LoadAllButton_Click" HorizontalAlignment="Right"
+                        Style="{StaticResource MaterialDesignRaisedButton}" Margin="0 16 16 0"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
