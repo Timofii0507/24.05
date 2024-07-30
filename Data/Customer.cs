@@ -1,4 +1,5 @@
 ﻿using System;
+
 public class Customer
 {
     public int CustomerID { get; set; }

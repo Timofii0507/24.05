@@ -1,4 +1,5 @@
 ﻿using System;
+
 public class Promotion
 {
     public int PromotionID { get; set; }

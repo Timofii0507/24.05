@@ -5,43 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_24._05"
         mc:Ignorable="d"
-       Title="Mailing List App" Height="450" Width="800"
-        DataContext="{Binding RelativeSource={RelativeSource Self}}"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Regular"
-        TextElement.FontSize="13"
-        FontFamily="{DynamicResource MaterialDesignFont}">
-
+        Title="Mailing List" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <!-- Top Panel -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="16">
-            <Button Content="Connect" Click="ConnectButton_Click" Margin="0 0 16 0"
-                    Style="{StaticResource MaterialDesignFlatButton}"/>
-
-            <TextBox x:Name="CityTextBox" Width="200" Margin="0 0 16 0"/>
-
-            <Button Content="Filter by City" Click="CityButton_Click"
-                    Style="{StaticResource MaterialDesignFlatButton}"/>
-
-            <TextBox x:Name="CountryTextBox" Width="200" Margin="16 0 16 0"/>
-
-            <Button Content="Filter by Country" Click="CountryButton_Click"
-                    Style="{StaticResource MaterialDesignFlatButton}"/>
+        <StackPanel>
+            <Button Name="ConnectButton" Content="Connect" Click="ConnectButton_Click"/>
+            <TextBox Name="OutputTextBox" Height="300" Width="700" TextWrapping="Wrap" AcceptsReturn="True"/>
+            <TextBox Name="CityTextBox" Text="Enter City" Width="200" IsReadOnly="True" Foreground="LightGray"/>
+            <Button Name="CityButton" Content="Show Customers By City" Click="CityButton_Click"/>
+            <TextBox Name="CountryTextBox" Text="Enter Country" Width="200" IsReadOnly="True" Foreground="LightGray"/>
+            <Button Name="CountryButton" Content="Show Customers By Country" Click="CountryButton_Click"/>
+            <Button Name="CountryPromotionsButton" Content="Show Promotions By Country" Click="CountryPromotionsButton_Click"/>
         </StackPanel>
-
-        <!-- Main Content -->
-        <ScrollViewer Grid.Row="1" Margin="16">
-            <StackPanel>
-                <TextBox x:Name="OutputTextBox" IsReadOnly="True" MinHeight="300" Margin="0 0 0 16"/>
-
-                <Button Content="Load All" Click="LoadAllButton_Click" HorizontalAlignment="Right"
-                        Style="{StaticResource MaterialDesignRaisedButton}" Margin="0 16 16 0"/>
-            </StackPanel>
-        </ScrollViewer>
     </Grid>
 </Window>
